@@ -515,4 +515,12 @@ public class Settings extends SettingsActivity {
 
     public static class HearingDevicesActivity extends SettingsActivity { /* empty */ }
     public static class HearingDevicesPairingActivity extends SettingsActivity { /* empty */ }
+
+    // LiveDisplay
+    public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
+
+   /**
+    * Activity for SkylineUI Workstation
+    */
+   public static class StartLabActivity extends SettingsActivity {}
 }
