@@ -36,15 +36,24 @@
         android:defaultValue="true" />
     </PreferenceCategory>
     
-    <PreferenceCategory 
-         android:title="System">
-         
-    <com.skylineui.SystemPropertySwitchPreference
+     <PreferenceCategory 
+         android:title="System">     
+       <!-- Compact heads up -->
+        <com.skylineui.settings.SystemPropertySwitchPreference
             android:key="persist.sys.compact_heads_up_notification.always_show"
-            android:icon="@drawable/ic_headsup"
-            android:title="@string/compact_heads_up_notifications_enabled_title"
-            android:summary="@string/compact_heads_up_notifications_enabled_summary"
             android:defaultValue="false"
-            android:dependency="heads_up_notifications_enabled" />
-     </PreferenceCategory>
+            android:title="@string/compact_heads_up_notifications_enabled_title"
+            android:summary="@string/compact_heads_up_notifications_enabled_summary" /> 
+        </PreferenceCategory>
+        
+     <PreferenceCategory 
+         android:title="Quick Settings">
+          <!-- QS dual-tone -->
+         <com.skylineui.settings.SystemSettingSwitchPreference
+            android:key="qs_dual_tone"
+            android:icon="@drawable/ic_color_bucket"
+            android:title="@string/qs_dual_tone_title"
+            android:summary="@string/qs_dual_tone_summary"
+            android:defaultValue="true" />                        
+        </PreferenceCategory>
 </PreferenceScreen>

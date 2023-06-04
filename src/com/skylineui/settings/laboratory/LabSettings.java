@@ -89,6 +89,9 @@ public class LabSettings extends SettingsPreferenceFragment implements
     public static void reset(Context mContext) {
     ContentResolver resolver = mContext.getContentResolver();
     SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
+    
+    Settings.System.putIntForUser(resolver,
+                Settings.System.QS_DUAL_TONE, 1, UserHandle.USER_CURRENT);
     }
     
     @Override
