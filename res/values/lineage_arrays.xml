@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2021 crDroid Android Project
+     Copyright (C) 2016-2024 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,25 +15,26 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-<!-- Quick Settings brightness slider -->
-    <string-array name="qs_show_brightness_slider_entries" translatable="false">
-        <item>@string/qs_show_brightness_slider_never</item>
-        <item>@string/qs_show_brightness_slider_expanded</item>
-        <item>@string/qs_show_brightness_slider_always</item>
-        <item>@string/qs_show_brightness_slider_not_expanded</item>
+ <string-array name="volume_styles_entries" translatable="false">
+        <item>@string/revamped_aosp_style</item>
+        <item>@string/rui_style</item>
+        <item>@string/rising_style</item>
+        <item>@string/double_layer_style</item>
+        <item>@string/gradient_style</item>
+        <item>@string/neumorph_style</item>
+        <item>@string/neumorph_outline_style</item>
+        <item>@string/outline_style</item>
+        <item>@string/shaded_layer_style</item>
     </string-array>
-    <string-array name="qs_show_brightness_slider_values" translatable="false">
+    <string-array name="volume_styles_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
-    </string-array>
-    <string-array name="qs_brightness_slider_position_entries" translatable="false">
-        <item>@string/qs_brightness_slider_position_top</item>
-        <item>@string/qs_brightness_slider_position_bottom</item>
-    </string-array>
-    <string-array name="qs_brightness_slider_position_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
     </string-array>
 </resources>
