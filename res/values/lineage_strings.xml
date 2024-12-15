@@ -28,4 +28,8 @@
     <!-- QS Dual Tone Colors -->
     <string name="qs_dual_tone_title">Dual tone themed</string>
     <string name="qs_dual_tone_summary">Use dual tone background colors instead of AOSP single tone</string>
+    
+     <!-- Now Bar -->
+    <string name="keyguard_now_bar_enabled_title">Now Bar</string>
+    <string name="keyguard_now_bar_enabled_summary">Enable now bar lockscreen widgets</string>
 </resources>

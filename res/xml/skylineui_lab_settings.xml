@@ -47,6 +47,16 @@
         </PreferenceCategory>
         
      <PreferenceCategory 
+         android:title="Lock Screen">   
+         <com.skylineui.settings.SystemSettingSwitchPreference
+         android:key="keyguard_now_bar_enabled"
+         android:title="@string/keyguard_now_bar_enabled_title"
+         android:summary="@string/keyguard_now_bar_enabled_summary"
+         android:defaultValue="false"
+         lineage:position="bottom" />
+    </PreferenceCategory>
+        
+     <PreferenceCategory 
          android:title="Quick Settings">
           <!-- QS dual-tone -->
          <com.skylineui.settings.SystemSettingSwitchPreference
