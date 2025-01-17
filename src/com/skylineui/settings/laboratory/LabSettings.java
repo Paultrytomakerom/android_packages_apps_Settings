@@ -77,7 +77,7 @@ public class LabSettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.SKYLINEUI;
+        return 0;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
