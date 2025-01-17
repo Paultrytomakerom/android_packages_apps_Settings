@@ -19,6 +19,48 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="top_level_settings">
+    
+ <PreferenceCategory
+    android:order="-160"
+    android:key="top_level_account_category"
+    android:layout="@layout/settingslib_preference_category_no_title">
+    <!-- Hello to your settings -->
+    <com.android.settings.widget.HomepagePreference
+        android:key="hello_to_settings"
+        android:order="1"
+        android:title="Hello, how are you?"
+        android:gravity="center"
+        android:summary="" />
+ </PreferenceCategory>
+
+  <PreferenceCategory
+        android:order="-150"
+        android:key="top_level_system_info_category"
+        android:layout="@layout/settingslib_preference_category_no_title">
+     <com.android.settings.widget.HomepagePreference
+            android:fragment="com.skylineui.settings.laboratory.LabSettings"
+            android:icon="@drawable/ic_skylineui_lab"
+            android:key="top_level_lab"
+            android:order="-40"
+            android:title="@string/skylineui_lab_title"
+            android:summary="@string/skylineui_lab_summary"/>             
+     </PreferenceCategory>
+     
+     <PreferenceCategory
+        android:order="-140"
+        android:key="top_level_about_phone"
+        android:layout="@layout/settingslib_preference_category_no_title">
+            <com.android.settings.widget.HomepagePreference
+            android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"
+            android:icon="@drawable/ic_settings_about_device_filled"
+            android:key="top_level_about_device"
+            android:order="-30"
+            android:title="@string/about_settings"
+            android:summary="@string/summary_placeholder"
+            settings:highlightableMenuKey="@string/menu_key_about_device"
+            settings:controller="com.android.settings.deviceinfo.aboutphone.TopLevelAboutDevicePreferenceController"/>
+    </PreferenceCategory>
+
 
     <PreferenceCategory
         android:order="-130"
@@ -142,14 +184,6 @@
             settings:controller="com.android.settings.fuelgauge.TopLevelBatteryPreferenceController"/>
 
         <com.android.settings.widget.HomepagePreference
-            android:fragment="com.skylineui.settings.laboratory.LabSettings"
-            android:icon="@drawable/ic_skylineui_lab"
-            android:key="top_level_lab"
-            android:order="-50"
-            android:title="@string/skylineui_lab_title"
-            android:summary="@string/skylineui_lab_summary"/>
-
-        <com.android.settings.widget.HomepagePreference
             android:fragment="com.android.settings.system.SystemDashboardFragment"
             android:icon="@drawable/ic_settings_system_dashboard_filled"
             android:key="top_level_system"
@@ -157,16 +191,6 @@
             android:title="@string/header_category_system"
             android:summary="@string/system_dashboard_summary"
             settings:highlightableMenuKey="@string/menu_key_system"/>
-
-        <com.android.settings.widget.HomepagePreference
-            android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"
-            android:icon="@drawable/ic_settings_about_device_filled"
-            android:key="top_level_about_device"
-            android:order="-10"
-            android:title="@string/about_settings"
-            android:summary="@string/summary_placeholder"
-            settings:highlightableMenuKey="@string/menu_key_about_device"
-            settings:controller="com.android.settings.deviceinfo.aboutphone.TopLevelAboutDevicePreferenceController"/>
     </PreferenceCategory>
 
     <PreferenceCategory
