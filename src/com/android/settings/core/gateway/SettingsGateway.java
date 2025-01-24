@@ -402,9 +402,7 @@ public class SettingsGateway {
             AccessibilityHearingAidsFragment.class.getName(),
             HearingDevicePairingFragment.class.getName(),
             ZenModesListFragment.class.getName(),
-            ZenModeFragment.class.getName()
-            LiveDisplaySettings.class.getName(),
-            WifiTetherClientManager.class.getName(),
+            ZenModeFragment.class.getName(),
             LabSettings.class.getName()
 
     };
@@ -452,6 +450,6 @@ public class SettingsGateway {
             Settings.ModuleLicensesActivity.class.getName(),
             UserBackupSettingsActivity.class.getName(),
             Settings.MemtagPageActivity.class.getName(),
-            Settings.NavigationModeSettingsActivity.class.getName(),
+            Settings.NavigationModeSettingsActivity.class.getName()
     };
 }
