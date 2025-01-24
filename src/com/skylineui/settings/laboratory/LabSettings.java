@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.skylineui.settings.laboratory;
 
 import android.app.Activity;
@@ -24,12 +23,20 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
-import androidx.preference.*;
+
+import androidx.preference.ListPreference;
+import androidx.preference.PreferenceScreen;
+
+import androidx.preference.Preference;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -37,6 +44,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
+
+import lineageos.providers.LineageSettings;
 
 import java.time.format.DateTimeFormatter;
 import java.time.LocalTime;
@@ -48,23 +57,40 @@ import java.util.List;
 
 @SearchIndexable
 public class LabSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener, Indexable {
+        Preference.OnPreferenceChangeListener {
+        
+    private static final String KEY_PHOTOS_SPOOF = "use_photos_spoof";
+    private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
+    
+    private SwitchPreference mPhotosSpoof;
 
     @Override
     public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-        ContentResolver resolver = getActivity().getContentResolver();
-        addPreferencesFromResource(R.xml.skylineui_lab_settings);
+    super.onCreate(icicle);
 
-        final Resources res = getResources();
+    addPreferencesFromResource(R.xml.skylineui_lab_settings);
+    PreferenceScreen prefScreen = getPreferenceScreen();
+        
+    mPhotosSpoof = (SwitchPreference) prefScreen.findPreference(KEY_PHOTOS_SPOOF);
+    mPhotosSpoof.setChecked(SystemProperties.getBoolean(SYS_PHOTOS_SPOOF, true));
+    mPhotosSpoof.setOnPreferenceChangeListener(this);
     }
-
+    
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        return false;
+        if (preference == mPhotosSpoof) {
+            boolean value = (Boolean) newValue;
+            SystemProperties.set(SYS_PHOTOS_SPOOF, value ? "true" : "false");
+            return true;
+        }
+        return true;
     }
-
+    
+    public static void reset(Context mContext) {
+    ContentResolver resolver = mContext.getContentResolver();
+    SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
+    }
+    
     @Override
     public void onResume() {
         super.onResume();

@@ -16,4 +16,8 @@
     <string name="skylineui_lab_title">Eastereggs</string>
     <string name="skylineui_lab_footer">Warning: These features are experimental and may have risks. Use them with caution.</string>
     <string name="skylineui_lab_summary">Experimental features</string>
+    
+    <!-- Unlimited google photos storage -->
+    <string name="use_photos_spoof_title">Unlimited Photos storage</string>
+    <string name="use_photos_spoof_summary">Spoof your device as Pixel XL for Google Photos app only to provide unlimited storage for backup</string>
 </resources>
