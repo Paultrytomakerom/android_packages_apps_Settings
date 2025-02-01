@@ -39,7 +39,7 @@
     <PreferenceCategory 
          android:title="System">
          
-    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
+    <com.skylineui.SystemPropertySwitchPreference
             android:key="persist.sys.compact_heads_up_notification.always_show"
             android:icon="@drawable/ic_headsup"
             android:title="@string/compact_heads_up_notifications_enabled_title"
