@@ -203,4 +203,10 @@
     <declare-styleable name="BackgroundPreference">
         <attr name="background" format="reference" />
     </declare-styleable>
+    
+    <!-- AdaptivePreference -->
+     <declare-styleable name="AdaptivePreference">
+        <attr name="position" format="string" />
+        <attr name="isLineageSettings" format="boolean" />
+    </declare-styleable> 
 </resources>
